@@ -1,0 +1,43 @@
+log4j.rootLogger=debug,console,rollingFile
+
+#它是 子Logger 是否继承 父Logger 的 输出源（appender） 的标志位。
+# 具体说，默认情况下子Logger会继承父Logger的appender，也就是说子Logger会在父Logger的appender里输出。
+# 若是additivity设为false，则子Logger只会在自己的appender里输出，而不会在父Logger的appender里输出。
+#log4j.additivity.org.apache=true
+
+
+#输出到控制台
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+#指定控制台日志输出的最低级别
+log4j.appender.console.Threshold=ALL
+#消息立即被输出
+log4j.appender.console.ImmediateFlush=true
+#输出目标默认就是System.out和System.err
+log4j.appender.console.Target=System.out
+#自定义输出格式
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+#以下是自定义输出内容
+log4j.appender.console.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
+
+
+
+#将日志打印到文件中
+#log4j.appender.logFile=org.apache.log4j.FileAppender
+#log4j.appender.logFile.Threshold=DEBUG
+#log4j.appender.logFile.ImmediateFlush=true
+#log4j.appender.logFile.Append=true
+#log4j.appender.logFile.File=../../logs/log.log
+#log4j.appender.logFile.layout=org.apache.log4j.PatternLayout
+#log4j.appender.logFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
+
+#回滚日志文件
+log4j.appender.rollingFile=org.apache.log4j.RollingFileAppender
+#log4j.appender.rollingFile.Threshold=DEBUG
+log4j.appender.rollingFile.ImmediateFlush=true
+log4j.appender.rollingFile.Append=true
+log4j.appender.rollingFile.File=../../logs/log.log
+log4j.appender.rollingFile.MaxFileSize=800KB
+log4j.appender.rollingFile.MaxBackupIndex=50
+log4j.appender.rollingFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.rollingFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
+

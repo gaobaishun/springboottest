@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: com.neo.web.HelloControlerTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.085 sec <<< FAILURE! - in com.neo.web.HelloControlerTests
+testHello(com.neo.web.HelloControlerTests)  Time elapsed: 0.063 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<405>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:54)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:81)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:665)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)
+	at com.neo.web.HelloControlerTests.testHello(HelloControlerTests.java:52)
+
+getHello(com.neo.web.HelloControlerTests)  Time elapsed: 0.021 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<405>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:54)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:81)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:665)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)
+	at com.neo.web.HelloControlerTests.getHello(HelloControlerTests.java:42)
+

@@ -4,6 +4,7 @@ package com.neo.web;
 
 import javax.servlet.http.HttpSession;
 
+import com.neo.entity.Demo;
 import com.neo.entity.Test;
 
 import com.neo.service.TestService;
@@ -12,10 +13,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class HelloController {
@@ -44,4 +45,10 @@ public class HelloController {
         return "123";
     }
 
+    @RequestMapping(value = "/test",method = {RequestMethod.POST})
+    @ResponseBody
+    public String testPostMan(@RequestBody String id){
+        logger.info("id:"+id);
+        return null;
+    }
 }

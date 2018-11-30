@@ -1,5 +1,6 @@
 package com.neo;
 
+import com.neo.Listener.ApplicationListenerStarted;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-
-	    SpringApplication.run(Application.class, args);
+		SpringApplication application = new SpringApplication(Application.class);
+		application.addListeners(new ApplicationListenerStarted());
+	    application.run(args);
 	}
 }
